@@ -22,6 +22,7 @@ https://www.rabbitmq.com/
 ### Scheduler
 Note: this project uses the in-memory scheduler for the purpose of demonstrating scheduled retries when an error occurred before the consumer completes processing a message. Be advised this approach should be avoided in production applications.
 For more information see the link below.
+
 https://masstransit-project.com/advanced/scheduling/
 
 ### NLog
