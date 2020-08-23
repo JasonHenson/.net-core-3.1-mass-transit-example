@@ -25,6 +25,7 @@ namespace Jason.Examples.MassTransit.Consumer
                     services.AddMassTransit(x =>
                     {
                         x.AddConsumer<MyConsumer>();
+                        x.AddMessageScheduler(new Uri("queue:scheduler"));
                         x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
                         {
                             var appSettings = provider
@@ -36,7 +37,7 @@ namespace Jason.Examples.MassTransit.Consumer
                                 h.Username(appSettings.RabbitMq.UserName);
                                 h.Password(appSettings.RabbitMq.Password);
                             });
-                            cfg.UseInMemoryScheduler("quartz-queue");
+                            cfg.UseInMemoryScheduler("scheduler-queue");
                             cfg.ReceiveEndpoint(
                                 "my-queue",
                                 e =>
