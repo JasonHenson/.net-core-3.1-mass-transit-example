@@ -19,3 +19,5 @@ https://masstransit-project.com/
 ### Rabbit MQ
 https://www.rabbitmq.com/
 
+### NLog
+https://nlog-project.org/
